@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SS Drug House BC Portal - Admin Dashboard</title>
+
+<link rel="stylesheet" href="../css/admin.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+  <script type="module" src="../js/auth.js"></script>
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<h2>🏦 SS Drug House</h2>
+
+<p>BC Portal Admin</p>
+
+</div>
+
+<ul class="menu">
+
+<li class="active">
+<i class="fas fa-chart-pie"></i>
+<span>Dashboard</span>
+</li>
+
+<li>
+<i class="fas fa-building-columns"></i>
+<span>Services</span>
+</li>
+
+<li>
+<i class="fas fa-file-lines"></i>
+<span>Documents</span>
+</li>
+
+<li>
+<i class="fas fa-newspaper"></i>
+<span>Updates</span>
+</li>
+
+<li>
+<i class="fas fa-images"></i>
+<span>Gallery</span>
+</li>
+
+<li>
+<i class="fas fa-circle-check"></i>
+<span>BC Status</span>
+</li>
+
+<li>
+<i class="fas fa-phone"></i>
+<span>Contact</span>
+</li>
+
+<li>
+<i class="fas fa-gear"></i>
+<span>Settings</span>
+</li>
+
+<li>
+<i class="fas fa-user"></i>
+<span>Profile</span>
+</li>
+
+<li>
+<i class="fas fa-right-from-bracket"></i>
+<span>Logout</span>
+</li>
+
+</ul>
+
+</aside>
+
+<!-- Main Content -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+<h1>
+☰ Dashboard
+</h1>
+
+<p>Welcome back, Administrator 👋</p>
+
+</div>
+
+<div class="top-actions">
+
+<button id="refreshBtn">
+
+<i class="fas fa-rotate-right"></i>
+
+Refresh
+
+</button>
+
+<button id="themeBtn">
+
+<i class="fas fa-moon"></i>
+
+</button>
+
+</div>
+<button id="logoutBtn">
+    <i class="fa-solid fa-right-from-bracket"></i> Logout
+</button>
+</header>
+<section class="stats-section">
+
+<div class="stat-card blue">
+    <i class="fas fa-building-columns"></i>
+    <h3>Total Services</h3>
+    <h2 id="serviceCount">12</h2>
+</div>
+
+<div class="stat-card green">
+    <i class="fas fa-newspaper"></i>
+    <h3>Total Updates</h3>
+    <h2 id="postCount">0</h2>
+</div>
+
+<div class="stat-card orange">
+    <i class="fas fa-images"></i>
+    <h3>Gallery Images</h3>
+    <h2 id="galleryCount">0</h2>
+</div>
+<div class="change-password-card">
+    <h3>Change Password</h3>
+
+    <input
+        type="password"
+        id="newPassword"
+        placeholder="New Password">
+
+    <button id="changePasswordBtn">
+        Change Password
+    </button>
+
+    <p id="passwordMessage"></p>
+</div>
+<div class="stat-card red">
+    <i class="fas fa-users"></i>
+    <h3>Visitors</h3>
+    <h2 id="visitorCount">0</h2>
+</div>
+
+</section>
+
+<section class="dashboard-grid">
+
+<div class="panel">
+
+<h2>🟢 Today's BC Status</h2>
+
+<div class="status-box">
+
+<h3 id="currentStatus">
+All Services Available
+</h3>
+
+<p id="statusMessage">
+All banking services are running normally.
+</p>
+
+<button id="changeStatusBtn">
+Change Status
+</button>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<h2>⚡ Quick Actions</h2>
+
+<div class="quick-buttons">
+
+<button id="addServiceBtn">
+🏦 Add Service
+</button>
+
+<button id="addPostBtn">
+📰 New Update
+</button>
+
+<button id="uploadImageBtn">
+🖼 Upload Image
+</button>
+
+<button id="settingsBtn">
+⚙ Settings
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>📢 Today's Notice</h2>
+
+<textarea
+id="todayNotice"
+rows="5"
+placeholder="Write today's important notice..."></textarea>
+
+<button id="saveNoticeBtn">
+Save Notice
+</button>
+
+</section>
+<section class="panel">
+
+<h2>📢 Today's Notice</h2>
+
+<textarea
+id="todayNotice"
+rows="5"
+placeholder="Write today's important notice..."></textarea>
+
+<button id="saveNoticeBtn">
+Save Notice
+</button>
+
+</section>
+
+<!-- ADD HERE 👇 -->
+<section class="panel">
+    <h2>🟢 Today's Status</h2>
+
+    <select id="statusSelect">
+        <option value="All Services Available">🟢 All Services Available</option>
+        <option value="Limited Services">🟡 Limited Services</option>
+       
+       <option value="Server Down">🔴 Server Down</option>
+       <option value="Holiday">🎉 Holiday</option>
+    </select>
+
+    <button id="saveStatusBtn">
+        Save Status
+    </button>
+</section>
+
+<section class="panel">
+
+<h2>📝 Service Message</h2>
+
+<textarea
+id="serviceMessage"
+rows="5"
+placeholder="Write today's service message..."></textarea>
+
+<button id="saveMessageBtn">
+Save Service Message
+</button>
+
+</section>
+
+<!-- Recent Activity starts here 👇 -->
+
+<section class="panel">
+
+<h2>📰 Recent Activity</h2>
+
+<table class="activity-table">
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+
+<th>Action</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="activityTable">
+
+<tr>
+
+<td>-</td>
+
+<td>No activity yet</td>
+
+<td>Ready</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+<section class="panel">
+    <h2>📊 Website Analytics</h2>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h3 id="totalVisitors">0</h3>
+            <p>Total Visitors</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="callClicks">0</h3>
+            <p>Call Clicks</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="whatsappClicks">0</h3>
+            <p>WhatsApp Clicks</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="mapClicks">0</h3>
+            <p>Map Clicks</p>
+        </div>
+
+    </div>
+</section>
+<section class="panel">
+    <h2>👥 Website Visitors</h2>
+
+    <div class="stat-card">
+        <h1 id="visitorCount">0</h1>
+        <p>Total Visitors</p>
+    </div>
+</section>
+<section class="panel">
+    <h2>🖼️ Gallery Management</h2>
+
+    <input type="text" id="galleryTitle" placeholder="Image Title">
+
+    <input type="file" id="galleryImage" accept="image/*">
+
+    <button id="uploadGalleryBtn">
+        Upload Image
+    </button>
+
+    <div id="galleryList"></div>
+</section>
+<footer class="footer">
+
+<p>
+© 2026 Shree Shrutasagar Drug House
+</p>
+
+<p>
+Official Bank of Maharashtra BC Portal
+</p>
+
+</footer>
+
+</main>
+
+</div>
+
+<script type="module" src="../js/firebase.js"></script>
+<script type="module" src="../js/dashboard.js"></script>
+<script type="module" src="../js/gallery.js"></script>
+
+</body>
+
+</html>

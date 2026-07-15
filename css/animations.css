@@ -1,0 +1,24 @@
+*{
+transition:.3s ease;
+}
+
+.service-card:hover,
+.action-card:hover,
+.document-card:hover,
+.update-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.btn:hover{
+
+transform:scale(1.05);
+
+}
+
+.gallery-grid img:hover{
+
+transform:scale(1.03);
+
+}

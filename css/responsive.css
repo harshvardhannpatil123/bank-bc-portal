@@ -1,0 +1,46 @@
+/* Mobile */
+
+@media (max-width:768px){
+
+.topbar{
+padding:12px;
+}
+
+.logo h2{
+font-size:18px;
+}
+
+.logo p{
+font-size:11px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.btn{
+width:100%;
+max-width:300px;
+margin:auto;
+}
+
+.action-grid,
+.service-grid,
+.document-grid,
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+.status-card{
+padding:20px;
+}
+
+}
