@@ -253,13 +253,9 @@ Moratagi, Karnataka.
 
 <footer>
 
-<p>
-© 2026 Shree Shrutasagar Drug House
-</p>
+<p id="footerName"></p>
 
-<p>
-Official Bank of Maharashtra BC Point
-</p>
+<p id="footerSubtitle"></p>
 
 </footer>
 <!-- Status Alert Popup -->
@@ -299,6 +295,11 @@ localStorage.getItem("siteName") || "Shree Shrutasagar Drug House";
 document.getElementById("siteHeaderSubtitle").textContent =
 localStorage.getItem("siteSubtitle") || "Official Bank of Maharashtra BC Point";
 </script>
+document.getElementById("footerName").textContent =
+"© 2026 " + (localStorage.getItem("siteName") || "Shree Shrutasagar Drug House");
+
+document.getElementById("footerSubtitle").textContent =
+localStorage.getItem("siteSubtitle") || "Official Bank of Maharashtra BC Point";
 </body>
 
 </html>
