@@ -12,6 +12,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0056b3">
+<link rel="apple-touch-icon" href="assets/logo/icon-192.png">
 </head>
 <div id="imageModal" class="image-modal">
   <span id="closeImage">&times;</span>
@@ -279,7 +282,15 @@ Official Bank of Maharashtra BC Point
 <script type="module" src="js/index.js"></script>
 <script type="module" src="js/gallery.js"></script>
 <script src="js/language.js"></script>
-
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker Registered"))
+      .catch(err => console.log("Service Worker Error:", err));
+  });
+}
+</script>
 </body>
 
 </html>
