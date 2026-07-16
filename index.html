@@ -104,13 +104,9 @@ Savings Account • Current Account • RD • FD • AEPS Banking Services
 </section>
 <section class="welcome-card">
 
-<h2 id="welcomeTitle">
-Welcome to Shree Shrutasagar Drug House
-</h2>
+<h2 id="welcomeTitle"></h2>
 
-<p id="welcomeText">
-Official Bank of Maharashtra BC Point providing safe, fast and trusted banking services.
-</p>
+<p id="welcomeText"></p>
 
 </section>
 <section class="bc-status" id="status">
@@ -290,6 +286,13 @@ if ("serviceWorker" in navigator) {
       .catch(err => console.log("Service Worker Error:", err));
   });
 }
+</script>
+<script>
+document.getElementById("welcomeTitle").textContent =
+localStorage.getItem("siteName") || "Welcome to Shree Shrutasagar Drug House";
+
+document.getElementById("welcomeText").textContent =
+localStorage.getItem("siteSubtitle") || "Official Bank of Maharashtra BC Point providing safe, fast and trusted banking services.";
 </script>
 </body>
 
